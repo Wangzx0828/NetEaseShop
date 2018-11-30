@@ -1,6 +1,6 @@
-# y
+# NetEaseShop
 
-> A Vue.js project
+> 一个基于Vue的网易严选前端项目
 
 ## Build Setup
 
