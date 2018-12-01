@@ -5,13 +5,13 @@
       <i class="iconfont icon-shouye2"></i>
       <span>首页</span>
     </li>
-    <li :class="{on:$route.path==='/classify'}">
-      <i class="iconfont icon-fenlei" @click="goto('classify')"></i>
-      <span>分类</span>
-    </li>
     <li :class="{on:$route.path==='/goods'}">
       <i class="iconfont icon-fangkuai" @click="goto('goods')"></i>
       <span>识物</span>
+    </li>
+    <li :class="{on:$route.path==='/classify'}">
+      <i class="iconfont icon-fenlei" @click="goto('classify')"></i>
+      <span>分类</span>
     </li>
     <li :class="{on:$route.path==='/shopcart'}">
       <i class="iconfont icon-gouwuchekong" @click="goto('shopcart')"></i>

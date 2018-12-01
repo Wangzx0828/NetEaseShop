@@ -42,6 +42,26 @@
         <MainCountLine />
         <homeNew />
         <homeLittlecarousel :isCss="2" :carousel="homedata.popularItemList"/>
+        <MainCountLine />
+        <homeLimit />
+        <MainCountLine />
+        <img class="moveImg" src="./images/icon/move.jpg" alt="">
+        <MainCountLine />
+        <homeTopicList />
+        <homeCart v-show="index !== 0" v-for="(item,index) in homedata.cateList" :key="index" :items="item"/>
+        <MainCountLine />
+        <div class="footer">
+          <div class="footerBtn">
+            <div class="btn">下载APP</div>
+            <div class="btn">电脑版</div>
+          </div>
+          <div class="footerSpan">
+            <span>网易公司版权所有 © 1997-2018</span>
+            <br>
+            <br>
+            <span>食品经营许可证: JY13301080111719</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="mask" v-show="isRotate">
@@ -60,10 +80,15 @@
 <script>
   import {mapState} from 'vuex'
   import BScroll from 'better-scroll'
+
   import homeCarousel from './home-carousel/home-carousel.vue'
   import homeCount from './home-count/home-count.vue'
   import homeNew from './home-new/home-new.vue'
   import homeLittlecarousel from './home-littlecarousel/home-littlecarousel.vue'
+  import homeLimit from './home-limit/home-limit.vue'
+  import homeTopicList from './home-topicList/home-topicList.vue'
+  import homeCart from './home-cart/home-cart.vue'
+
   export default {
     data(){
       return{
@@ -76,6 +101,10 @@
         new BScroll('.listDiv',{
           click:true,
           scrollX:true
+        })
+        new BScroll('.count-wrapper',{
+          click:true,
+          scrollY:true
         })
       })
     },
@@ -91,7 +120,10 @@
       homeCarousel,
       homeCount,
       homeNew,
-      homeLittlecarousel
+      homeLittlecarousel,
+      homeLimit,
+      homeTopicList,
+      homeCart
     }
   }
 </script>
@@ -185,9 +217,58 @@
       .rotateSty
         transform rotate(180deg)
         transition transform  .5s
-.content
-  box-sizing border-box
-  padding-top 74px
+.count-wrapper
+  width 100%
+  height 100%
+  .content
+    width 100%
+    padding-bottom 50px
+    padding-top 74px
+    .moveImg
+      width 100%
+      height 150px
+    .footer
+      width 100%
+      height 132px
+      background-color #414141
+      display flex
+      flex-direction column
+      align-items center
+      justify-content space-around
+      .footerBtn
+        display flex
+        justify-content space-between
+        font-size 16px
+        color #e2e2e2
+        width 210px
+        height 32px
+        .btn
+          text-align: center
+          line-height 30px
+          width 85px
+          height 30px
+          border 1px solid #545454
+      .footerSpan
+        text-align: center
+        font-size 12px
+        color #999999
+    .activity
+      height 36px
+      font-size 12px
+      display flex
+      justify-content space-around
+      align-items center
+      padding 0 15px
+      div
+        width 114px
+        height 18px
+        display flex
+        align-items center
+        img
+          width 16px
+          height 16px
+          margin-right 6px
+
 .mask
   position absolute
   top 44px
@@ -227,26 +308,4 @@
         .borderline
           border 1px solid #b4282d
           color #b4282d
-.content
-  width 100%
-  height 100%
-  overflow hidden
-
-  .activity
-    height 36px
-    font-size 12px
-    display flex
-    justify-content space-around
-    align-items center
-    padding 0 15px
-    div
-      width 114px
-      height 18px
-      display flex
-      align-items center
-      img
-        width 16px
-        height 16px
-        margin-right 6px
-
 </style>

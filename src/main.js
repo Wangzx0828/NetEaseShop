@@ -9,8 +9,10 @@ import store from './store'
 import '../src/mock/mockServer';
 import 'swiper/dist/css/swiper.min.css'
 import MainCountLine from './components/MainCountLine/MainCountLine.vue'
+import GoodHeader from './components/GoodHeader/GoodHeader.vue'
 
 Vue.component('MainCountLine',MainCountLine)
+Vue.component('GoodHeader',GoodHeader)
 
 Vue.config.productionTip = false
 

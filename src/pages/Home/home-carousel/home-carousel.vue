@@ -36,7 +36,7 @@
     width 100%
     height 185px
     .swiperImg
-      width 375px
+      width 100%
       height 185px
   .swiper-pagination-bullet
     width 16px

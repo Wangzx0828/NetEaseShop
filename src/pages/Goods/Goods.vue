@@ -1,12 +1,17 @@
 <template>
   <div>
-   Goods
+    <GoodHeader />
+    <GoodsCarousel />
   </div>
 </template>
 
 <script>
-
-  export default {}
+  import GoodsCarousel from './goods-carousel/goods-carousel.vue'
+  export default {
+    components:{
+      GoodsCarousel
+    }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
