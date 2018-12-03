@@ -7,7 +7,7 @@
         <img src="./images/jiantouyou.png" alt="">
       </div>
       <div class="mainCount-card" v-if="index<4" v-for="(item,index) in homedata.tagList" :key="index">
-        <img class="cartImg" :src="item.picUrl" alt="">
+        <img class="cartImg" v-lazy="item.picUrl" alt="">
         <span class="sp1">{{item.name}}</span>
         <span class="sp2">{{item.floorPrice}}元起</span>
       </div>

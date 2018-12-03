@@ -4,13 +4,15 @@
       <span>专题精选</span>
       <img src="./images/jiantouyou.png" alt="">
     </div>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(item,index) in homedata.topicList" :key="index">
-          <div class="swiper-box">
-            <img class="swiperImg" :src="item.itemPicUrl" alt="">
-            <span class="sp1">{{item.title}}<span class="sp2">{{item.priceInfo}}元</span></span>
-            <span class="sp3">{{item.subtitle}}</span>
+    <div class="swiper-window">
+      <div class="swiper-container2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(item,index) in homedata.topicList" :key="index">
+            <div class="swiper-box">
+              <img class="swiperImg" v-lazy="item.itemPicUrl" alt="">
+              <span class="sp1">{{item.title}}<span class="sp2">{{item.priceInfo}}元</span></span>
+              <span class="sp3">{{item.subtitle}}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -29,8 +31,10 @@
     watch:{
       homedata(){
         this.$nextTick(()=>{
-          new Swiper ('.swiper-container',{
-            loop: false
+          new Swiper ('.swiper-container2',{
+            slidesPerView: 1.2,
+            slidesOffsetAfter:14,
+            spaceBetween: 10
           })
         })
       }
@@ -54,13 +58,14 @@
       margin-left 8px
       width 15px
       height 15px
-  .swiper-container
+  .swiper-window
+    margin-left 15px
     width: 100%
     height: 210px
-    .swiper-slide
-      padding-left 14px
-      padding-right 20px
-      display flex
+    .swiper-container2
+      margin-left 15px
+      width: 100%
+      height: 210px
       .swiper-box
         width 290px
         height 210px

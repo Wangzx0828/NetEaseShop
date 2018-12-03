@@ -4,7 +4,7 @@
     <div class="home-cart-header">{{items.name}}好物</div>
     <div class="home-cart-conent">
       <div class="cart" v-for="(item,index) in items.itemList" :key="index">
-        <img class="cartImg" :src="item.primaryPicUrl" alt="">
+        <img class="cartImg" v-lazy="item.primaryPicUrl" alt="">
         <div class="cartIntro">{{item.simpleDesc}}</div>
         <span class="sp1">{{item.name}}</span>
         <span class="sp2">￥{{item.retailPrice}}</span>
