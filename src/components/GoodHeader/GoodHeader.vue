@@ -1,10 +1,10 @@
 <template>
   <div class="GoodHeader">
-    <i class="iconfont icon-shouye2"></i>
+    <i class="iconfont icon-shouye2" @click="$router.push('/home')"></i>
     <img class="yanxuanImg" src="./images/yanxuan.png" alt="">
     <div class="header-right">
-      <img class="searchImg" src="./images/search2-2fb94833aa.png" alt="">
-      <i class="iconfont icon-gouwuchekong"></i>
+      <img class="searchImg" src="./images/search2-2fb94833aa.png" alt="" @click="$router.push('/classify')">
+      <div class="shopImg" @click="$router.push('/shopcart')"></div>
     </div>
   </div>
 </template>
@@ -33,10 +33,15 @@
       height 27px
     .header-right
       display flex
-      .icon-gouwuchekong
-        font-size 24px
+      align-items center
       .searchImg
         padding-right 10px
         width 24px
         height 24px
+      .shopImg
+        width 32px
+        height 32px
+        background-image url("../../../static/image/icons.png")
+        background-size 100px 200px
+        background-repeat no-repeat
 </style>

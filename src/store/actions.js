@@ -1,5 +1,5 @@
 import {reqDatahome,reqDatanav,reqDatatopic} from '../api'
-import {GET_HOMEDATA,GET_GOODSDATA,GET_NAVDATA} from './mutation-types'
+import {GET_HOMEDATA, GET_GOODSDATA, GET_NAVDATA, GET_CATELIST} from './mutation-types'
 export default {
   //异步获取home数据
   async getDatahome({commit},cb){
@@ -25,6 +25,14 @@ export default {
     if(result.code === 0 ){
       const navdata = result.data
       commit(GET_NAVDATA,{navdata})
+      typeof cb === 'function' && cb();
+    }
+  },
+  async getCateList ({commit},cb){
+    const result = await reqDatahome();
+    if(result.code === 0 ){
+      const catelist = result.data.cateList
+      commit(GET_CATELIST,{catelist})
       typeof cb === 'function' && cb();
     }
   }

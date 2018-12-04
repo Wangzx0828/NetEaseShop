@@ -8,21 +8,51 @@ import Goods from '../pages/Goods/Goods.vue'
 import Home from '../pages/Home/Home.vue'
 import Person from '../pages/Person/Person.vue'
 import ShopCart from '../pages/ShopCart/ShopCart.vue'
+import HomeChildren from '../pages/Home/home-children/home-children.vue'
+import HomeConent from '../pages/Home/home-conent/home-conent.vue'
 
 export default new VueRouter({
-  mode:'history',
   routes:[
     {
       path:'/classify',
-      component:Classify
+      component:Classify,
+      meta:{
+        isShowFooter:true
+      }
     },
     {
       path:'/goods',
-      component:Goods
+      component:Goods,
+      meta:{
+        isShowFooter:true
+      }
     },
     {
       path:'/home',
-      component:Home
+      component:Home,
+      meta:{
+        isShowFooter:true
+      },
+      children:[
+        {
+          path:'/',
+          component:HomeConent,
+          meta:{
+            isShowFooter:true
+          },
+        },
+        {
+          path:'/home/homechildren/0',
+          redirect:'/home'
+        },
+        {
+          path:'/home/homechildren/:id',
+          component:HomeChildren,
+          meta:{
+            isShowFooter:true
+          }
+        }
+      ]
     },
     {
       path:'/person',
@@ -30,11 +60,14 @@ export default new VueRouter({
     },
     {
       path:'/shopcart',
-      component:ShopCart
+      component:ShopCart,
+      meta:{
+        isShowFooter:true
+      }
     },
     {
       path:'/',
-      redirect:'/goods'
+      redirect:'/home'
     }
   ]
 })

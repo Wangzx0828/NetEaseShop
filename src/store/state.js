@@ -1,5 +1,6 @@
 export default {
   homedata:{},
   goodsdata:{},
-  navdata:{}
+  navdata:{},
+  catelist:[],
 }
