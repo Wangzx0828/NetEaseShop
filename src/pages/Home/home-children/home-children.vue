@@ -32,6 +32,11 @@
     },
     components:{
       homeCart
+    },
+    watch:{
+      '$route'(to,from){
+
+      }
     }
   }
 </script>

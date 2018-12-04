@@ -47,12 +47,12 @@
     },
     methods:{
       lineShow(index){
-        this.$router.push(`/home/homechildren/${index}`)
         this.isShow = index;
+        this.$router.push(`/home/homechildren/${index}`)
       }
     },
     mounted(){
-      this.isShow = this.$route.params.id
+      this.isShow = this.$route.params.id*1
       this.$store.dispatch('getDatahome',()=>{
         new BScroll('.listDiv',{
           click:true,
