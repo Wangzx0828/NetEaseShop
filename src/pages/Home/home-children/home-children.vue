@@ -1,5 +1,5 @@
 <template>
-  <div class="homeChildren">
+  <div class="homeChildren" v-if="catelist[isPath]">
     <div id="home-children">
       <img class="home-children-img" v-lazy="catelist[isPath].bannerUrl" alt="">
       <homeCart :items="catelist[isPath]"/>
