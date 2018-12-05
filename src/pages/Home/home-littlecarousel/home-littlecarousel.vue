@@ -2,7 +2,7 @@
   <div class="newCarousel" :class='isBscroll'>
     <ul class="Carousellist">
       <li class="Carouselli" v-for="(item,index) in carousel" :key="index">
-        <img class="carouselImg" :src="item.listPicUrl" alt="">
+        <img class="carouselImg" v-lazy="item.listPicUrl" alt="">
         <span class="sp1">{{item.name}}</span>
         <span class="sp2">{{item.simpleDesc}}</span>
         <span class="sp3">￥{{item.retailPrice}}</span>
